@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EasyBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1y7-rY-TjH">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQm-U7-ZWT">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Rewind" id="8Fr-Ja-rZe">
+                                        <connections>
+                                            <action selector="goBack" destination="1y7-rY-TjH" id="SAq-bK-ruq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="oOM-ey-3Ug">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="hk9-ZS-dsI">
+                                            <rect key="frame" x="82" y="7" width="167" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="qJp-lu-ndA"/>
+                                            </connections>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem title="Fast Forward" id="ykc-tH-UmF">
+                                        <connections>
+                                            <action selector="goForward" destination="1y7-rY-TjH" id="JHQ-uh-dJP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1y7-rY-TjH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1QD-8P-dAd"/>
+                            <constraint firstItem="1y7-rY-TjH" firstAttribute="top" secondItem="FQm-U7-ZWT" secondAttribute="bottom" constant="8" id="Abh-2w-v1g"/>
+                            <constraint firstAttribute="trailing" secondItem="FQm-U7-ZWT" secondAttribute="trailing" id="Qwg-UQ-LUO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1y7-rY-TjH" secondAttribute="bottom" id="YNq-eM-NO4"/>
+                            <constraint firstItem="FQm-U7-ZWT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rzz-gr-Lff"/>
+                            <constraint firstItem="FQm-U7-ZWT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="wP4-oq-FaC"/>
+                            <constraint firstAttribute="trailing" secondItem="1y7-rY-TjH" secondAttribute="trailing" id="xMD-Wl-dnU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="1y7-rY-TjH" id="WBV-SE-VMG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="63.418290854572717"/>
+        </scene>
+    </scenes>
+</document>
